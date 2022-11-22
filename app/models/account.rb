@@ -9,4 +9,7 @@ class Account
   field :account_id, type: BSON::ObjectId
 
   index({ account_id: 1 }, { sparse: true })
+
+  embeds_many :recent_budgets
+  embeds_many :recent_transactions
 end
