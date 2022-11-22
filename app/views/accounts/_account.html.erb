@@ -1,0 +1,34 @@
+<div id="<%= dom_id account %>">
+  <p>
+    <strong>Name:</strong>
+    <%= account.name %>
+  </p>
+
+  <p>
+    <strong>Code:</strong>
+    <%= account.code %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= account.description %>
+  </p>
+
+  <p>
+    <strong>Starting balance:</strong>
+    <%= account.starting_balance %>
+  </p>
+
+  <p>
+    <strong>Currency:</strong>
+    <%= account.currency %>
+  </p>
+
+  <p>
+  <% if account.account_id %>
+    <strong>Parent Account:</strong>
+    <%= Account.find(account.account_id)&.name %>
+  <% end %>
+  </p>
+
+</div>
