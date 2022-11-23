@@ -1,0 +1,16 @@
+<%= render @transaction %>
+<h4>Entries </h4>
+<hr width=75% />
+<%= render "transaction_entries/form" %>
+<hr width=75% %>
+<div id="transaction-entries">
+  <% @transaction.transaction_entries.each do |transaction_entry| %>
+    <%= render "transaction_entries/transaction_entry", transaction_entry: transaction_entry %>
+  <% end %>
+</div>
+<div>
+  <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |
+  <%= link_to "Back to transactions", transactions_path %>
+
+  <%= button_to "Destroy this transaction", @transaction, method: :delete %>
+</div>

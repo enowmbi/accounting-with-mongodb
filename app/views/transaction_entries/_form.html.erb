@@ -1,0 +1,21 @@
+<%= form_with(model: TransactionEntry.new) do |transaction_entry| %>
+  <div>
+    <%= transaction_entry.label :entry_type %>
+    <%= transaction_entry.select(:entry_type, ["Debit", "Credit"],{prompt: "Select entry type"}) %>
+  </div>
+  <div>
+    <%= transaction_entry.label :account_id %>
+    <%= transaction_entry.select(:account_id, Account.all.map{|a|[a.name, a._id]},{prompt: "Select account"}) %>
+  </div>
+  <div>
+    <%= transaction_entry.label :amount %>
+    <%= transaction_entry.number_field :amount %>
+  </div>
+  <div>
+    <%= transaction_entry.label :memo %>
+    <%= transaction_entry.text_area :memo %>
+  </div>
+  <div>
+    <%= transaction_entry.submit %>
+  </div>
+<% end %>
