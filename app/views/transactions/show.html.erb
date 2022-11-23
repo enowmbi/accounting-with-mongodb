@@ -1,7 +1,9 @@
 <%= render @transaction %>
 <h4>Entries </h4>
 <hr width=75% />
-<%= render "transaction_entries/form" %>
+<div id="new-transaction-entry-form">
+  <%= render "transaction_entries/form" %>
+</div>
 <hr width=75% %>
 <div id="transaction-entries">
   <% @transaction.transaction_entries.each do |transaction_entry| %>
