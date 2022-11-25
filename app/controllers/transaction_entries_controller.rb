@@ -12,7 +12,7 @@ class TransactionEntriesController < ApplicationController
             turbo_stream.prepend("transaction-entries", partial: "transaction_entries/transaction_entry", locals: { transaction_entry: @transaction.transaction_entries.last }),
             turbo_stream.update("total-credits", html: @transaction.total_credits),
             turbo_stream.update("total-debits", html: @transaction.total_credits),
-            turbo_stream.update("notice", html: "Transaction Entry was successfully")
+            turbo_stream.update("notice", html: "Transaction Entry was created successfully")
           ]
         end
       else
